@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local and Session Storage</title>
+        <script>
+            function clickCounter() {
+                if (typeof(Storage) !== "undefined") {
+                    if(localStorage.clickcount) {
+                        localStorage.clickcount = Number(localStorage.clickcount)+1;
+                    }
+                    else {
+                    localStorage.clickcount = 1;
+                }
+
+                document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s)";
+                }
+                
+                else {
+                    document.getElementById("result").innerHTML = "The browser does not support local storage"
+                }
+            }
+
+            function seshCounter() {
+                if(typeof(Storage) !== "undefined") {
+                    if(sessionStorage.clickcount) {
+                        sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                    }
+                    else {
+                        sessionStorage.clickcount = 1;
+                    }
+                    document.getElementById("result1").innerHTML = "You have clicked this button "+ sessionStorage.clickcount+" time(s)";
+                }
+            }
+        </script>
+    </head>
+
+    <bod>
+        <button onclick="clickCounter()" type="button">Click for permenant Count</button><br>
+        <div id="result"></div>
+        <p>Click the button to see the count increase for local storage</p> <br>
+
+        <button onclick="seshCounter()" type="button">Click here for temporary count</button><br>
+        <div id="result1"></div>
+        <p>The data in this line should be reset after refreshing the page</p>
+    </bod>
+</html>

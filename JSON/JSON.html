@@ -36,11 +36,13 @@
         //         }).catch(err => console.error(err));
         //         </script> -->
 
-        <!-- <script>
+        <script>
             $(document).ready(function(){
+               debugger
                 var benchesData=[];
                 $.getJSON('http://5d80cc7e99f8a20014cf99a9.mockapi.io/api/v1/room/getRoomMatrix', function(apiDataResult){
                     function apiDataResult(benchesData){
+                        debugger
                         var select = document.getElementById(".mypanel");
                         var options = benchesData.data.anamolies_benches;
                         var i;
@@ -55,7 +57,7 @@
 }
                 });
             });
-        </script> -->
+        </script>
 
         <!-- <script>
             $(document).ready(function(){
