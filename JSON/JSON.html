@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recieve Data</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+    </head>
+
+    <body>
+        <p>
+            Here is the data from the API
+        </p>
+        <div class="mypanel"></div>
+
+        <!-- <script>
+            $(document).ready(function(){
+                $.getJSON('http://5d80cc7e99f8a20014cf99a9.mockapi.io/api/v1/room/getRoomMatrix', function(data) {
+                    var text = `Column: ${data.column} <br></br>
+                                currentStrain: ${data.current_strain}<br></br>
+                                spaceUsed: ${data.space_used}<br></br>
+                                benchId: ${data.bench_id}<br></br>
+                                Row: ${data.row}<br></br>
+                                Color: ${data.color}<br>`
+                    $(".mypanel").html(text);
+                });
+            });
+        
+        </script> -->
+
+<!-- <script>
+        //         fetch('http://5d80cc7e99f8a20014cf99a9.mockapi.io/api/v1/room/getRoomMatrix')
+        //             .then(res => res.json())
+        //             .then((out) => {
+        //                 console.log('Output: ', out);
+        //         }).catch(err => console.error(err));
+        //         </script> -->
+
+        <!-- <script>
+            $(document).ready(function(){
+                var benchesData=[];
+                $.getJSON('http://5d80cc7e99f8a20014cf99a9.mockapi.io/api/v1/room/getRoomMatrix', function(apiDataResult){
+                    function apiDataResult(benchesData){
+                        var select = document.getElementById(".mypanel");
+                        var options = benchesData.data.anamolies_benches;
+                        var i;
+                        console.log(options, "Options")
+                        for (i = 0; i < options.length; i++) {
+                            var opt = options[i].current_strain;
+                            var el = document.createElement("option");
+                            el.textContent = opt;
+                            el.value = opt;
+                        select.add(el);
+                        }
+}
+                });
+            });
+        </script> -->
+
+        <!-- <script>
+            $(document).ready(function(){
+                $.getJSON('http://5d80cc7e99f8a20014cf99a9.mockapi.io/api/v1/room/getRoomMatrix', function(data) {
+                    var text = `Benches: ${data.anamolies_benches} <br></br>`
+                    $(".mypanel").html(text);
+                });
+            });
+        
+        </script> -->
+
+        <script>
+            $(document).ready(function(){
+                var URL = "http://5d80cc7e99f8a20014cf99a9.mockapi.io/api/v1/room/getRoomMatrix"
+
+                $.ajax({
+                    dataType:"json",
+                    url: URL,
+                    success: success
+                });
+
+                function success(e){
+                    var result=""
+                    $.each(e, function(index,value){
+                        result += "<p>"+ value.column+"</p>";
+                        result += "<p>"+ value.current_constraint+"</p>";
+                        result += "<p>"+ value.space_used+"</p>";
+                        result += "<p>"+ value.bench_id+"</p>";
+                        result += "<p>"+ value.row+"</p>";
+                        result += "<p>"+ value.color+"</p>";
+                    });
+                    $("mypanel").html(result);
+                }
+            });
+        </script>
+    </body>
+</html>

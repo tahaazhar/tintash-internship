@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <header class = "header">
+            <div class = "container">
+                <div class = "row">
+                    <div class="col-xs-12 col-md-12">
+                        <h1>Post Comments</h1>    
+                    </div><!--End of responsive col div--> 
+                </div><!--End of row div-->
+            </div><!--End of container div-->
+        </header>
+
+        <div class="main">
+            <div class="container">
+                    <form class="form" id="my-form">
+                        <div class="row">
+                            <div class="col-xs-8 col-md-10 col-lg-10">
+                                <input id="comment" type="text" placeholder="What's on your mind?">
+                            </div><!--End of responsive col div-->
+                            
+                            <div class="col-xs-4 cole-md-2 col-lg-2">
+                                <button type="submit" class="btn">Post!</button>
+                            </div>
+                        </div><!--End of row div-->
+                        </form>
+                        
+                        <ul class="comments" id="comments">
+                            <li>Comfortably Numb</li>
+                            <li>There has been an awakening</li>
+                            <li>Is there anybody out there?</li>
+                        </ul>
+                </div> <!--End of container class-->
+        </div><!--End of main class-->
+    </body>
+</html>

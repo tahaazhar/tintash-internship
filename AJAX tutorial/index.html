@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Practicing AJAX</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#btn").click(function(){
+                    console.log("working");
+                    $("#test").load("data.txt", {Name: "Taha", LastName: "Azhar"}, function() {
+                        alert("Hi There!: ");
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="test">
+            <p>This is the first paragraph</p>
+            <button id="btn">Cick to change</button>
+        </div>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create JSON string from a JavaScript array.</h2>
+
+<p id="demo"></p>
+
+<script>
+
+var arr = [ "John", "Peter", "Sally", "Jane" ];
+var myJSON = JSON.stringify(arr);
+document.getElementById("demo").innerHTML = myJSON;
+
+</script>
+
+</body>
+</html>
